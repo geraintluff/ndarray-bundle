@@ -40,7 +40,7 @@ As such, you can generate code that just includes the modules you need.  You'll 
 ```javascript
 var codeGen = require('ndarray-bundle/generate');
 
-codeGen.generateFile('./my-ndarray-bundle.js'); // includes everything by default, writes to file
+codeGen.generateFile('./ndarray-bundle.js'); // writes to file, including all known modules by default
 var jsCode = codeGen.generateString(); // or get as string
 ```
 
@@ -48,7 +48,7 @@ var jsCode = codeGen.generateString(); // or get as string
 
 To select certain packages, you can specify the packages you need by supplying an object argument:
 ```javascript
-codeGen.generateFile('./my-ndarray-bundle.js', {
+codeGen.generateFile('./ndarray-bundle.js', {
 	ops: true,
 	complex: true,
 	signal: true
@@ -57,7 +57,7 @@ codeGen.generateFile('./my-ndarray-bundle.js', {
 
 The structure of this argument is recursive.  If you want to pick and choose from sub-groups, then you can supply an object instead of `true`:
 ```javascript
-codeGen.generateFile('./my-ndarray-bundle.js', {
+codeGen.generateFile('./ndarray-bundle.js', {
 	ops: true,
 	complex: true,
 	signal: {

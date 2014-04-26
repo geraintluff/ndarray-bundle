@@ -50,14 +50,15 @@ var generateString = module.exports.generateString = function (conditions) {
 var generateFile = module.exports.generateFile = function (outputFile, conditions) {
 	var string = generateString(conditions);
 	fs.writeFileSync(outputFile, string);
+	return string;
 };
 
 if (require.main === module) {
 	// Called from the command-line
-	var jsCode = generateString();
-	fs.writeFileSync('ndarray-bundle.js', jsCode);
+	var jsCode = generateFile('ndarray-bundle.js');
+
+	// Execute generated code as a function, replacing require() so we get a list of modules
 	var func = new Function('module', 'require', jsCode);
-	
 	var modules = [];
 	func({}, function (name) {
 		modules.push(name);
