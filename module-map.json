@@ -5,7 +5,12 @@
 	"zeros": "zeros",
 
 	"signal": {
+		"convolve": "ndarray-convolve",
 		"fft": "ndarray-fft",
-		"convolve": "ndarray-convolve"
+		"phaseUnwrap": "phase-unwrap",
+		"translate": "ndarray-translate",
+		"filters": {
+			"gaussian": "ndarray-gaussian-filter"
+		}
 	}
 }

@@ -1,6 +1,8 @@
 # ndarray-bundle
 
-Tools for both including a bunch of useful [ndarray modules](https://www.npmjs.org/search?q=ndarray), and generating code for your own
+This module bundles up a bunch of useful [ndarray modules](https://www.npmjs.org/search?q=ndarray), and returns them as a replacement to the `ndarray` module.
+
+It also includes code-generation, so you can generate your *own* version of the bundle (with the same structure) that only includes the modules you need, for use with Browserify.
 
 ## Inclusion via Node
 
@@ -8,6 +10,7 @@ When included as a Node module, the result is based on the [`ndarray`](https://w
 
 ```javascript
 var ndarray = require('ndarray-bundle');
+var arr1 = ndarray(new Float32Array(100), [10, 10]);
 ```
 
 However, other modules are included and added to this bundle, e.g.:
@@ -22,8 +25,8 @@ ndarray.fill(nd1, function (i, j) { // included from "ndarray-fill"
 Some of the modules are grouped together by functionality:
 
 ```javascript
-assert(ndarray.pixels.get); // included from the "get-pixels" module
-assert(ndarray.pixels.save); // included from the "save-pixels" module
+assert(ndarray.signals.fft); // included from the "ndarray-fft" module
+assert(ndarray.signals.convolve); // included from the "ndarray-convolve" module
 ```
 
 The structure of the included modules is defined in `module-map.json`.
@@ -52,7 +55,7 @@ codeGen.generateFile('./my-ndarray-bundle.js', {
 });
 ```
 
-If you want to pick and choose from sub-groups, then you can supply an object instead of `true`:
+The structure of this argument is recursive.  If you want to pick and choose from sub-groups, then you can supply an object instead of `true`:
 ```javascript
 codeGen.generateFile('./my-ndarray-bundle.js', {
 	ops: true,
@@ -60,6 +63,14 @@ codeGen.generateFile('./my-ndarray-bundle.js', {
 	signal: {
 		fft: true
 	}
+});
+```
+
+You can also enhance this structure with other modules, by providing a string:
+```javascript
+codeGen.generateFile('./my-ndarray-bundle.js', {
+	ops: true,
+	myCustomModule: 'ndarray-my-custom-module'
 });
 ```
 

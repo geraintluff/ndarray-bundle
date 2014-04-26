@@ -1,8 +1,8 @@
 {
   "name": "ndarray-bundle",
-  "version": "0.1.0",
-  "description": "A composite bundle of various ndarray packages",
-  "main": "bundle.js",
+  "version": "0.2.0",
+  "description": "Organise various ndarray packages into a single-structure",
+  "main": "ndarray-bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,9 +21,11 @@
   "homepage": "https://github.com/geraintluff/ndarray-bundle",
   "dependencies": {
     "ndarray": "~1.0.13",
-    "ndarray-complex": "~1.0.1"
-  },
-  "devDependencies": {
-    "grunt": "~0.4.4"
+    "ndarray-complex": "~1.0.1",
+    "zeros": "0.0.0",
+    "ndarray-ops": "~1.2.1",
+    "ndarray-fill": "~0.1.0",
+    "ndarray-convolve": "~1.0.0",
+    "ndarray-fft": "~0.1.0"
   }
 }

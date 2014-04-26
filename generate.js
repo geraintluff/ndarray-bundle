@@ -14,8 +14,11 @@ function generateExpression(map, conditions) {
 		var result = '{';
 		var entries = [];
 		for (var key in conditions) {
-			if (map[key]) {
-				var entry = generateExpression(map[key], conditions[key]);
+			 if (typeof conditions[key] === 'string') {
+				var entry = generateExpression(conditions[key]);
+				entries.push(JSON.stringify(key) + ": " + entry);
+			} else if (map[key] || typeof conditions[key] === 'object') {
+				var entry = generateExpression(map[key] || {}, conditions[key]);
 				entries.push(JSON.stringify(key) + ": " + entry);
 			} else {
 				throw new Error('Unrecognised module in map: ' + key);
@@ -48,3 +51,17 @@ var generateFile = module.exports.generateFile = function (outputFile, condition
 	var string = generateString(conditions);
 	fs.writeFileSync(outputFile, string);
 };
+
+if (require.main === module) {
+	// Called from the command-line
+	var jsCode = generateString();
+	fs.writeFileSync('ndarray-bundle.js', jsCode);
+	var func = new Function('module', 'require', jsCode);
+	
+	var modules = [];
+	func({}, function (name) {
+		modules.push(name);
+		return name;
+	});
+	console.log(modules.join(' '));
+}
