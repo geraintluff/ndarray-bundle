@@ -1,6 +1,6 @@
 {
   "name": "ndarray-bundle",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Organise various ndarray packages into a single-structure",
   "main": "ndarray-bundle.js",
   "scripts": {
@@ -26,6 +26,9 @@
     "ndarray-ops": "~1.2.1",
     "ndarray-fill": "~0.1.0",
     "ndarray-convolve": "~1.0.0",
-    "ndarray-fft": "~0.1.0"
+    "ndarray-fft": "~0.1.0",
+    "phase-unwrap": "~0.1.0",
+    "ndarray-translate": "0.0.1",
+    "ndarray-gaussian-filter": "0.0.0"
   }
 }
