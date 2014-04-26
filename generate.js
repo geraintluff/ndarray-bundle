@@ -56,14 +56,47 @@ var generateFile = module.exports.generateFile = function (outputFile, condition
 
 if (require.main === module) {
 	// Called from the command-line
-	var jsCode = generateFile('ndarray-bundle.js');
+	generateFile('ndarray-bundle.js');
 
-	// Execute generated code as a function, replacing require() so we get a list of modules
-	var func = new Function('module', 'require', jsCode);
-	var modules = [];
-	func({}, function (name) {
-		modules.push(name);
-		return name;
-	});
-	console.log(modules.join(' '));
+	var moduleNames = [];
+	
+	var htmlFile = fs.readFileSync(__dirname + '/index.html', {encoding: 'utf-8'});
+	var htmlParts = htmlFile.split('<!-- TEMPLATE -->');
+	
+	function mapToHtml(map) {
+		var result = '<span class="js-formatting">{</span><ul>';
+		var keys = Object.keys(map);
+		keys.sort(function (a, b) {
+			if (typeof map[a] === 'object' && typeof map[b] !== 'object') {
+				return 1;
+			}
+			if (typeof map[b] === 'object' && typeof map[a] !== 'object') {
+				return -1;
+			}
+			return (a.toLowerCase() < b.toLowerCase()) ? -1 : 1;
+		});
+		keys.forEach(function (key, index) {
+			if (typeof map[key] === 'object') {
+				result += '<li><span class="module-group">' + key + '</span><span class="js-formatting">: </span>';
+			 
+				result += mapToHtml(map[key]);
+			} else {
+				var moduleName = map[key];
+				var moduleUrl = 'https://www.npmjs.org/package/' + encodeURIComponent(moduleName);
+				result += '<li>' + key + ': ';
+				result += '<a class="module-name" href="' + moduleUrl + '"><span class="js-formatting">"</span>' + moduleName + '<span class="js-formatting">"</span></a>';
+				moduleNames.push(moduleName);
+			}
+			if (index < keys.length - 1) {
+				result += '<span class="js-formatting comma">,';
+			}
+			result += '</li>';
+		});
+		result += '</ul><span class="js-formatting">}</span>';
+		return result;
+	}
+	htmlParts[1] = mapToHtml(moduleMap);
+	fs.writeFileSync(__dirname + '/index.html', htmlParts.join('<!-- TEMPLATE -->'));
+
+	console.log(moduleNames.join(' '));
 }

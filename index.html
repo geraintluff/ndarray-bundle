@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<title>ndarray bundle</title>
+		<style>
+			body {
+				font-family: Trebuchet MS;
+				font-size: 16px;
+				text-align: center;
+			}
+		
+			.block {
+				text-align: left;
+				background-color: #EEE;
+				border: 1px solid #AAA;
+				border-radius: 5px;
+				margin: 0.5em;
+				padding: 0.3em;
+				padding-left: 0.5em;
+				padding-right: 0.5em;
+				max-width: 800px;
+				margin: auto;
+				
+				font-family: Consolas, monospace;
+				font-size: 14px;
+			}
+			
+			.module-list ul {
+				margin: 0;
+				padding: 0;
+				padding-left: 4ex;
+			}
+			
+			.module-list li {
+				list-style: none;
+			}
+			
+			.module-group {
+				color: #00A;
+			}
+			
+			a.module-name {
+				text-decoration: none;
+				color: #282;
+			}
+			
+			a.module-name:hover {
+				color: #0B0;
+				text-decoration: underline;
+			}
+			
+			.js-formatting {
+				color: #888;
+			}
+			
+			.js-formatting.comma {
+				visibility: hidden;
+			}
+			
+			a.module-name .js-formatting {
+				visibility: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>ndarray bundle</h1>
+		
+		<p>The <a href="https://www.npmjs.org/package/ndarray-bundle"><code>ndarray-bundle</code></a> is a Node module including <a href="https://www.npmjs.org/package/ndarray"><code>ndarray</code></a> and related useful libraries.</p>
+		
+		<h2>Usage</h2>
+		
+		<p>You include the module the same way you'd include <a href="https://www.npmjs.org/package/ndarray"><code>ndarray</code></a>:</p>
+		
+		<pre class="block"><code>var ndarray = require('ndarray-bundle');</code></pre>
+
+		<p>Other useful functionality (e.g. complex numbers, convolution, FFT) is available as properties or sub-properties:</p>
+		
+		<pre class="block"><code>var spectrum = ndarray.fft(1, waveReal, waveImag);</code></pre>
+		
+		<h2>Module structure</h2>
+	
+		<p>These are the modules that are included in the bundle - click the module names for documentation:</p>
+		<div class="block module-list">
+			<!-- TEMPLATE --><span class="js-formatting">{</span><ul><li>complex: <a class="module-name" href="https://www.npmjs.org/package/ndarray-complex"><span class="js-formatting">"</span>ndarray-complex<span class="js-formatting">"</span></a><span class="js-formatting comma">,</li><li>fill: <a class="module-name" href="https://www.npmjs.org/package/ndarray-fill"><span class="js-formatting">"</span>ndarray-fill<span class="js-formatting">"</span></a><span class="js-formatting comma">,</li><li>ops: <a class="module-name" href="https://www.npmjs.org/package/ndarray-ops"><span class="js-formatting">"</span>ndarray-ops<span class="js-formatting">"</span></a><span class="js-formatting comma">,</li><li>zeros: <a class="module-name" href="https://www.npmjs.org/package/zeros"><span class="js-formatting">"</span>zeros<span class="js-formatting">"</span></a><span class="js-formatting comma">,</li><li><span class="module-group">signal</span><span class="js-formatting">: </span><span class="js-formatting">{</span><ul><li>convolve: <a class="module-name" href="https://www.npmjs.org/package/ndarray-convolve"><span class="js-formatting">"</span>ndarray-convolve<span class="js-formatting">"</span></a><span class="js-formatting comma">,</li><li>fft: <a class="module-name" href="https://www.npmjs.org/package/ndarray-fft"><span class="js-formatting">"</span>ndarray-fft<span class="js-formatting">"</span></a><span class="js-formatting comma">,</li><li>phaseUnwrap: <a class="module-name" href="https://www.npmjs.org/package/phase-unwrap"><span class="js-formatting">"</span>phase-unwrap<span class="js-formatting">"</span></a><span class="js-formatting comma">,</li><li>translate: <a class="module-name" href="https://www.npmjs.org/package/ndarray-translate"><span class="js-formatting">"</span>ndarray-translate<span class="js-formatting">"</span></a><span class="js-formatting comma">,</li><li><span class="module-group">filters</span><span class="js-formatting">: </span><span class="js-formatting">{</span><ul><li>gaussian: <a class="module-name" href="https://www.npmjs.org/package/ndarray-gaussian-filter"><span class="js-formatting">"</span>ndarray-gaussian-filter<span class="js-formatting">"</span></a></li></ul><span class="js-formatting">}</span></li></ul><span class="js-formatting">}</span></li></ul><span class="js-formatting">}</span><!-- TEMPLATE -->
+		</div>
+
+		<h2>Contribute</h2>
+		
+		<p>Written an <code>ndarray</code> module, then please <a href="https://github.com/geraintluff/ndarray-bundle/issues/new">raise an issue</a>  on the <a href="https://github.com/geraintluff/ndarray-bundle">GitHub repo</a>.  Pull requests are also welcome!
+	</body>
+</html>
