@@ -1,7 +1,7 @@
 {
   "name": "ndarray-bundle",
-  "version": "0.2.1",
-  "description": "Organise various ndarray packages into a single-structure",
+  "version": "0.2.2",
+  "description": "A single include for various useful ndarray packages",
   "main": "ndarray-bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

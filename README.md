@@ -1,8 +1,12 @@
 # ndarray-bundle
 
-This module bundles up a bunch of useful [ndarray modules](https://www.npmjs.org/search?q=ndarray), and returns them as a replacement to the `ndarray` module.
+This module packages up `ndarray` and other related modules into a single include.  The goal is to be a single-stop ndarray-based module (similar to SciPy).
 
-It also includes code-generation, so you can generate your *own* version of the bundle (with the same structure) that only includes the modules you need, for use with Browserify.
+### Generating a cut-down version for Browserify
+
+Browserify scans for every module that is `require()`d, so Browserify-ing the larger bundle ends up packaging up a bunch of things you don't need.
+
+This module also includes code-generation, so you can generate your *own* version of the bundle that only includes the modules you need.  This means you can work with the comprehensive bundle during dev, but swap it out for a compatible, minimal bundle when you know which modules you need.
 
 ## Inclusion via Node
 
