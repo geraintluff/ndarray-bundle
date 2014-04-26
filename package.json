@@ -1,6 +1,6 @@
 {
   "name": "ndarray-bundle",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A single include for various useful ndarray packages",
   "main": "ndarray-bundle.js",
   "scripts": {
