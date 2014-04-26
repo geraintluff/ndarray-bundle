@@ -1,0 +1,11 @@
+{
+	"complex": "ndarray-complex",
+	"fill": "ndarray-fill",
+	"ops": "ndarray-ops",
+	"zeros": "zeros",
+
+	"signal": {
+		"fft": "ndarray-fft",
+		"convolve": "ndarray-convolve"
+	}
+}
