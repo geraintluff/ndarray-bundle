@@ -7,12 +7,63 @@ var modules = {
 	"fill": require("ndarray-fill"),
 	"ops": require("ndarray-ops"),
 	"zeros": require("zeros"),
+	"is": require("isndarray"),
+	"pool": require("ndarray-scratch"),
+	"sort": require("ndarray-sort"),
+	"util": {
+		"pack": require("ndarray-pack"),
+		"unpack": require("ndarray-unpack"),
+		"binarySearch": require("binary-search-bounds"),
+		"select": require("ndarray-select"),
+		"imshow": require("ndarray-imshow")
+	},
+	"matrix": {"mul": require("ndgemm")},
 	"signal": {
 		"convolve": require("ndarray-convolve"),
 		"fft": require("ndarray-fft"),
 		"phaseUnwrap": require("phase-unwrap"),
 		"translate": require("ndarray-translate"),
-		"filters": {"gaussian": require("ndarray-gaussian-filter")}
+		"filters": {
+			"gaussian": require("ndarray-gaussian-filter"),
+			"translateFft": require("ndarray-translate-fft")
+		}
+	},
+	"numeric": {
+		"prefixSum": require("ndarray-prefix-sum"),
+		"moments": require("ndarray-moments"),
+		"distance": require("ndarray-distance")
+	},
+	"image": {
+		"linearInterpolate": require("ndarray-linear-interpolate"),
+		"luminance": require("luminance"),
+		"warp": require("ndarray-warp"),
+		"rotate": require("image-rotate"),
+		"phaseAlign": require("phase-align"),
+		"colorMap": require("apply-colormap")
+	},
+	"graphics": {
+		"surfaceNet": require("surface-nets"),
+		"voxelize": require("voxelize"),
+		"rayMatch": require("raymarch")
+	},
+	"binary": {
+		"distanceTransform": require("distance-transform"),
+		"ballMorphology": require("ball-morphology")
+	},
+	"io": {
+		"wav": require("ndarray-wav"),
+		"pixels": {
+			"get": require("get-pixels"),
+			"save": require("save-pixels")
+		},
+		"binvox": {"save": require("ndarray-to-binvox")},
+		"string": require("ndarray-string")
+	},
+	"sparse": {
+		"proxy": require("ndarray-proxy"),
+		"bit": require("ndarray-bit"),
+		"hash": require("ndarray-hash"),
+		"segment": require("ndarray-segment")
 	}
 };
 

@@ -3,14 +3,67 @@
 	"fill": "ndarray-fill",
 	"ops": "ndarray-ops",
 	"zeros": "zeros",
+	"is": "isndarray",
+	"pool": "ndarray-scratch",
+	"sort": "ndarray-sort",
 
+	"util": {
+		"pack": "ndarray-pack",
+		"unpack": "ndarray-unpack",
+		"binarySearch": "binary-search-bounds",
+		"select": "ndarray-select",
+		"imshow": "ndarray-imshow"
+	},
+	"matrix": {
+		"mul": "ndgemm"
+	},
 	"signal": {
 		"convolve": "ndarray-convolve",
 		"fft": "ndarray-fft",
 		"phaseUnwrap": "phase-unwrap",
 		"translate": "ndarray-translate",
 		"filters": {
-			"gaussian": "ndarray-gaussian-filter"
+			"gaussian": "ndarray-gaussian-filter",
+			"translateFft": "ndarray-translate-fft"
 		}
+	},
+	"numeric": {
+		"prefixSum": "ndarray-prefix-sum",
+		"moments": "ndarray-moments",
+		"distance": "ndarray-distance"
+	},
+	"image": {
+		"linearInterpolate": "ndarray-linear-interpolate",
+		"luminance": "luminance",
+		"warp": "ndarray-warp",
+		"rotate": "image-rotate",
+		"phaseAlign": "phase-align",
+		"colorMap": "apply-colormap"
+	},
+	"graphics": {
+		"surfaceNet": "surface-nets",
+		"voxelize": "voxelize",
+		"rayMatch": "raymarch"
+	},
+	"binary": {
+		"distanceTransform": "distance-transform",
+		"ballMorphology": "ball-morphology"
+	},
+	"io": {
+		"wav": "ndarray-wav",
+		"pixels": {
+			"get": "get-pixels",
+			"save": "save-pixels"
+		},
+		"binvox": {
+			"save": "ndarray-to-binvox"
+		},
+		"string": "ndarray-string"
+	},
+	"sparse": {
+		"proxy": "ndarray-proxy",
+		"bit": "ndarray-bit",
+		"hash": "ndarray-hash",
+		"segment": "ndarray-segment"
 	}
 }
