@@ -41,15 +41,6 @@ var modules = {
 		"phaseAlign": require("phase-align"),
 		"colorMap": require("apply-colormap")
 	},
-	"graphics": {
-		"surfaceNet": require("surface-nets"),
-		"voxelize": require("voxelize"),
-		"rayMatch": require("raymarch")
-	},
-	"binary": {
-		"distanceTransform": require("distance-transform"),
-		"ballMorphology": require("ball-morphology")
-	},
 	"io": {
 		"wav": require("ndarray-wav"),
 		"pixels": {

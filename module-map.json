@@ -40,15 +40,6 @@
 		"phaseAlign": "phase-align",
 		"colorMap": "apply-colormap"
 	},
-	"graphics": {
-		"surfaceNet": "surface-nets",
-		"voxelize": "voxelize",
-		"rayMatch": "raymarch"
-	},
-	"binary": {
-		"distanceTransform": "distance-transform",
-		"ballMorphology": "ball-morphology"
-	},
 	"io": {
 		"wav": "ndarray-wav",
 		"pixels": {
